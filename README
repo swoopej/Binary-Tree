@@ -1,1 +1,1 @@
-This is a simple implementation of a binary tree done for a Data Structures class.
+This is a simple implementation of a binary tree done for a Data Structures class.  The assignment was to create a binary tree that could store data in a device such as app names, game names, etc., so other classes are just clients for the binary tree class.
