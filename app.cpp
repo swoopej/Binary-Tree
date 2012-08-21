@@ -19,8 +19,8 @@ int app::insert(char new_data[]) {
 }
 
 //retrieve
-char * app::retrieve(char search_key[], char * &blank_array, int &num_matches) {
-	app_tree -> retrieve(search_key, blank_array, num_matches);
+char * app::retrieve(char search_key[], char * &blank_array) {
+	app_tree -> retrieve(search_key, blank_array);
 }
 
 //remove

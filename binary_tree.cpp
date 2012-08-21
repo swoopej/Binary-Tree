@@ -93,28 +93,25 @@ int binary_tree::pvt_remove(node * &root, char search_key[]) {
 }
 
 //private retrieve function
-char * binary_tree::retrieve(char search_key[], char * &blank_array, int &num_matches) {
-	char * results = NULL; //variable to store the return of the private function
-	results = pvt_retrieve(root, search_key, blank_array, num_matches);
-	cout<< "Results test:"<< results;
+char * binary_tree::retrieve(char search_key[], char * &blank_array) {
+	char * results = new char[strlen(search_key) + 1]; //variable to store the return of the private function
+	results = pvt_retrieve(root, search_key, blank_array);
 	return results;
 }
 
 //public retrieve function
-char * binary_tree::pvt_retrieve(node * &root, char search_key[], char * &blank_array, int &num_matches) {
+char * binary_tree::pvt_retrieve(node * &root, char search_key[], char * &blank_array) {
 	if(!root) {
 		return 0;
 	} else if(strcmp(root -> data, search_key) == 0) { //key is found
 		int x = strlen(root -> data + 1);
 		char * blank_array = new char[x + 1]; //allocate
 		strcpy(blank_array, root -> data); //copy over to new memory
-		cout<<"Copy test:"<<blank_array;
-		num_matches ++;
 		return blank_array; //return result
 	} else if(strcmp(root -> data, search_key) > 0) {// key is less than root
-		pvt_retrieve(root -> left_ptr, search_key, blank_array, num_matches);
+		pvt_retrieve(root -> left_ptr, search_key, blank_array);
 	} else { //key is more than root
-		pvt_retrieve(root -> right_ptr, search_key, blank_array, num_matches);
+		pvt_retrieve(root -> right_ptr, search_key, blank_array);
 	}
 }
 

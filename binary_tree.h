@@ -20,16 +20,16 @@ public:
 	~binary_tree();
 	//public functions with node arguments
 	int insert(char new_data[]);
-	char * retrieve(char search_key[], char * &blank_array, int &num_matches);
 	int remove(char search_key[]);
+	char * retrieve(char search_key[], char * &blank_array);
 	//display with no args
 	void display();
 
 private:
-	//privat functions with node arugments
+	//private functions with node arugments
 	int pvt_insert(node * &root, char new_data[]);
 	int pvt_remove(node * &root, char search_key[]);
-	char * pvt_retrieve(node * &root, char search_key[], char * &blank_array, int &num_matches);
+	char * pvt_retrieve(node * &root, char search_key[], char * &blank_array);
 	void display_in_order(node * &root);
 	node * search(node * & current, char search_key[]);
 	int find_in_order(node * &current); //finds the in order successor for the remove function
